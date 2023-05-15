@@ -5,19 +5,17 @@ import requests
 from string import Template
 import time
 import xml.etree.ElementTree as ET
-import requests 
+import requests
 from xml.etree import ElementTree
 import csv
 from datetime import datetime
 import pandas as pd
 from glob import glob
-# np é uma convenção para o numpy, convenção é um acordo 
-# estabelecido com o intuito de padronizar e facilitar o entendimento.
-import numpy as np  
+import numpy as np
 
 #http://www.ssp.sp.gov.br/transparenciassp/Consulta.aspx
 
-path_input_file='C:\\Diogo\Devs\\Python\\roubosPy\\in\\'
+path_input_file='data_crim\\in\\'
 
 #Obtem arquivos para serem processados
 def checkFilesInputExist(filePath):
@@ -40,18 +38,15 @@ def reader_file(file):
     for column in missing_data.columns.values.tolist():
         print(column)
         print (missing_data[column].value_counts())
-        print("")   
-
-
-
+        print("")
 
     t=df['MARCA_CELULAR'].value_counts()
     print("total " + str(t))
 
 
-    X = df["MARCA_CELULAR"] 
+    X = df["MARCA_CELULAR"]
 
-    moda = X.mode() 
+    moda = X.mode()
     print("Moda ", moda[0])
 
 
